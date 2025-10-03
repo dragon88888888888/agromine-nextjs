@@ -30,9 +30,14 @@ Por favor, incluye en tu análisis:
 Respalda tus conclusiones con referencias a estándares (OMS, EPA, normativas locales).`;
 
     // Construir el historial de conversación (solo mensajes de usuario y modelo, no el inicial del asistente)
+    interface ConversationMessage {
+      role: string;
+      content: string;
+    }
+
     const history = (conversationHistory || [])
-      .filter((msg: any) => msg.role === 'user' || (msg.role === 'assistant' && conversationHistory.indexOf(msg) > 0))
-      .map((msg: any) => ({
+      .filter((msg: ConversationMessage) => msg.role === 'user' || (msg.role === 'assistant' && conversationHistory.indexOf(msg) > 0))
+      .map((msg: ConversationMessage) => ({
         role: msg.role === 'user' ? 'user' : 'model',
         parts: [{ text: msg.content }],
       }));

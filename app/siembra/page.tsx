@@ -23,10 +23,10 @@ interface Message {
 }
 
 export default function SiembraPage() {
-  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
+  const [, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -82,7 +82,7 @@ ${data.alerts && data.alerts.length > 0 ? `⚠️ **Alertas:** ${data.alerts.joi
       }]);
 
       setLoading(false);
-    } catch (err) {
+    } catch {
       setError('Error al cargar los datos del clima');
       setLoading(false);
     }

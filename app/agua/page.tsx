@@ -294,7 +294,7 @@ Déjame analizar estos datos y proporcionarte una evaluación completa...`,
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       Ingresa los parámetros de tu muestra de agua en el panel izquierdo
-                      y haz clic en "Analizar agua" para comenzar.
+                      y haz clic en &quot;Analizar agua&quot; para comenzar.
                     </p>
                   </div>
                 </div>
